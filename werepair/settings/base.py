@@ -1,10 +1,12 @@
 import os
 from decouple import config
 
-BASE_DIR = os.path.dirname(os.path.dirname(
-    os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 SECRET_KEY = config('SECRET_KEY')
+
+# Set the default auto field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -13,12 +15,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+    'crispy_bootstrap4',
     'django_countries',
 
     'core'
@@ -29,12 +32,13 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware', 
+    'allauth.account.middleware.AccountMiddleware', 
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'djecommerce.urls'
+ROOT_URLCONF = 'werepair.urls'
 
 TEMPLATES = [
     {
@@ -52,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djecommerce.wsgi.application'
+WSGI_APPLICATION = 'werepair.wsgi.application'
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
