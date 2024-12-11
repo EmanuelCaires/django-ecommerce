@@ -1,99 +1,161 @@
-<p align="center">
-  <p align="center">
-    <a href="https://justdjango.com/?utm_source=github&utm_medium=logo" target="_blank">
-      <img src="https://assets.justdjango.com/static/branding/logo.svg" alt="JustDjango" height="72">
-    </a>
-  </p>
-  <p align="center">
-    The Definitive Django Learning Platform.
-  </p>
-</p>
+## WeRepair.io - E-Commerce Website
 
-### *** Deprecation warning ***
-
-This project was created almost two years ago. Since then, there is a newer version of the project which you can find [here](https://github.com/justdjango/django-simple-ecommerce)
+### **Table of Contents**
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Folder Structure](#folder-structure)
+7. [Contributing](#contributing)
+8. [License](#license)
 
 ---
 
-# Django E-commerce
+### **Project Overview**
+WeRepair.io is a fully functional e-commerce platform built with Django that allows users to purchase tech products, such as phones, cases, and replacement parts. Designed for a smooth and secure shopping experience, the platform features intuitive navigation, secure checkout, and robust product management.
 
-This is a very simple e-commerce website built with Django.
+#### **Key Features**
+- **Product Categories:** Organized into Phones, Cases, and Replacement Parts.
+- **Detailed Product Pages:** Includes descriptions, pricing, and product images.
+- **Shopping Cart:** Users can add, view, and remove items.
+- **Secure Payments:** Integrated Stripe for secure online payments.
+- **User Accounts:** Log in, view order history, and manage personal details.
 
-## Quick demo
-
-[![alt text](https://justdjango.s3-us-west-2.amazonaws.com/media/gifs/djecommerce.gif "Logo")](https://youtu.be/z4USlooVXG0)
-
----
-
-## Project Summary
-
-The website displays products. Users can add and remove products to/from their cart while also specifying the quantity of each item. They can then enter their address and choose Stripe to handle the payment processing.
-
-[![alt text](https://justdjango.s3-us-west-2.amazonaws.com/media/thumbnails/djecommerce.png "Logo")](https://youtu.be/z4USlooVXG0)
+Live Demo: [WeRepair.io](https://example.com)  
+Repository: [GitHub Link](https://github.com/yourusername/werepair.io)
 
 ---
 
-## Running this project
+### **Features**
+#### **User Features**
+1. **Product Browsing**
+   - Explore different categories and products.
+2. **Search Functionality**
+   - Quickly find products by title or description.
+3. **Cart Management**
+   - Add and remove items from the shopping cart.
+4. **Secure Checkout**
+   - Make payments safely using Stripe.
+5. **User Authentication**
+   - Create accounts, log in, and access order history.
 
-To get this project up and running you should start by having Python installed on your computer. It's advised you create a virtual environment to store your projects dependencies separately. You can install virtualenv with
-
-```
-pip install virtualenv
-```
-
-Clone or download this repository and open it in your editor of choice. In a terminal (mac/linux) or windows terminal, run the following command in the base directory of this project
-
-```
-virtualenv env
-```
-
-That will create a new folder `env` in your project directory. Next activate it with this command on mac/linux:
-
-```
-source env/bin/active
-```
-
-Then install the project dependencies with
-
-```
-pip install -r requirements.txt
-```
-
-Now you can run the project with this command
-
-```
-python manage.py runserver
-```
-
-**Note** if you want payments to work you will need to enter your own Stripe API keys into the `.env` file in the settings files.
+#### **Admin Features**
+1. Manage products, categories, and orders.
+2. View and update customer information.
 
 ---
 
-## Follow the tutorial
+### **Tech Stack**
+#### **Frontend**
+- **HTML5:** Markup structure.
+- **CSS3:** Styling and design.
+- **JavaScript:** Interactivity and dynamic content.
+- **Bootstrap 4:** Pre-built responsive UI components.
+- **JQuery:** Simplified JavaScript for interactive features.
 
-This project is part of a [series on YouTube](https://youtu.be/z4USlooVXG0) that teaches how to build an e-commerce website with Django.
+#### **Backend**
+- **Django:** Python web framework for backend logic.
+- **Django REST Framework:** (Optional) For API integrations.
+- **PostgreSQL:** Relational database for storing data.
+- **Stripe:** Payment processing.
+
+#### **Development Tools**
+- **Git:** Version control.
+- **Docker:** (Optional) For containerization.
+- **Gitpod:** Cloud-based development environment.
+
+#### **Deployment**
+- **Heroku:** For hosting and deployment.
+- **AWS:** (Optional) For additional storage.
 
 ---
 
-## Support
+### **Installation**
+#### **Prerequisites**
+- Python 3.x installed on your system.
+- PostgreSQL database set up and running.
+- Stripe account for payment integration.
 
-If you'd like to support this project and all the other open source work on this organization, you can use the following options
-
-### Option 1: GitHub Sponsors
-
-Sponsor through GitHub Sponsors. On GitHub, [this repository](https://github.com/justdjango/django-ecommerce) shows a button where you can Sponsor the contributors.
-
-### Option 2: JustDjango
-
-If you're learning Django and want to take your next step to become a professional Django developer, consider signing up on [JustDjango](https://learn.justdjango.com).
+#### **Steps to Set Up Locally**
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yourusername/werepair.io.git
+   ```
+2. **Navigate to the Project Directory:**
+   ```bash
+   cd werepair.io
+   ```
+3. **Create a Virtual Environment:**
+   ```bash
+   python3 -m venv env
+   source env/bin/activate
+   ```
+4. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. **Set Up the Database:**
+   - Configure your PostgreSQL database in `settings.py`.
+   - Run migrations:
+     ```bash
+     python manage.py migrate
+     ```
+6. **Set Up Stripe:**
+   - Add your Stripe API keys in the `.env` file:
+     ```
+     STRIPE_PUBLISHABLE_KEY=your_publishable_key
+     STRIPE_SECRET_KEY=your_secret_key
+     ```
+7. **Run the Development Server:**
+   ```bash
+   python manage.py runserver
+   ```
+8. **Access the Website:**
+   - Open `http://127.0.0.1:8000` in your browser.
 
 ---
 
-<div align="center">
+### **Usage**
+- **Browse Products:** Navigate through product categories.
+- **Add to Cart:** Select items to purchase.
+- **Checkout:** Complete the payment process using Stripe.
+- **Admin Panel:** Accessible at `/admin` for managing the site (admin credentials required).
 
-<i>Other places you can find us:</i><br>
+---
 
-<a href="https://www.youtube.com/channel/UCRM1gWNTDx0SHIqUJygD-kQ" target="_blank"><img src="https://img.shields.io/badge/YouTube-%23E4405F.svg?&style=flat-square&logo=youtube&logoColor=white" alt="YouTube"></a>
-<a href="https://www.twitter.com/justdjangocode" target="_blank"><img src="https://img.shields.io/badge/Twitter-%231877F2.svg?&style=flat-square&logo=twitter&logoColor=white" alt="Twitter"></a>
+### **Folder Structure**
+```plaintext
+WeRepair.io/
+├── manage.py
+├── db.sqlite3
+├── requirements.txt
+├── .env
+├── apps/
+│   ├── products/
+│   ├── cart/
+│   ├── checkout/
+│   └── accounts/
+├── static/
+├── templates/
+└── README.md
+```
 
-</div>
+---
+
+### **Contributing**
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Commit changes (`git commit -m "Description"`).
+4. Push to your branch (`git push origin feature-name`).
+5. Submit a pull request.
+
+---
+
+### **License**
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+This README example ensures clarity and professionalism while maintaining all essential information about the project. Students can adapt it for their own projects.
